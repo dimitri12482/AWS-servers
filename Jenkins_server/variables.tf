@@ -2,10 +2,10 @@ variable "mykey" {
   default = "cloud"
 }
 variable "myami" {
-  default = "ami-0f8e81a3da6e2510a" #Latest Ubuntu
+  default = "ami-0b5eea76982371e91" #Latest Ubuntu
 }
 variable "instancetype" {
-  default = "t2.micro"
+  default = "t3a.medium"
 }
 variable "tag" {
   default = "Jenkins_Server1"
