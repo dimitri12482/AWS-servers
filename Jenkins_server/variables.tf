@@ -1,5 +1,5 @@
 variable "mykey" {
-  default = "devops"
+  default = "cloud"
 }
 variable "myami" {
   default = "ami-0f8e81a3da6e2510a" #Latest Ubuntu
