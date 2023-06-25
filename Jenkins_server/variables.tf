@@ -10,6 +10,6 @@ variable "instancetype" {
 variable "tag" {
   default = "Jenkins_Server1"
 }
-variable "jenkins-sg" {
+variable "jenkins-sg1" {
   default = "JenkinsSecGrp"
 }
