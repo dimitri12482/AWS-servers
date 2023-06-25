@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-west-2"
+  region = "us-west-1"
 }
 
 resource "aws_iam_role" "aws_access" {
@@ -26,7 +26,7 @@ resource "aws_iam_role" "aws_access" {
       },
     ]
   })
-  managed_policy_arns = ["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess", "arn:aws:iam::aws:policy/AmazonEC2FullAccess", "arn:aws:iam::aws:policy/IAMFullAccess"]
+  managed_policy_arns = ["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess", "arn:aws:iam::aws:policy/AmazonEC2FullAccess", "arn:aws:iam::aws:policy/AdministratorAccess"]
 
 }
 
@@ -38,7 +38,7 @@ resource "aws_iam_instance_profile" "ec2-profile" {
 resource "aws_instance" "tf-jenkins-server" {
   ami = var.myami
   instance_type = var.instancetype
-  key_name      = var.devops
+  key_name      = var.mykey
   vpc_security_group_ids = [aws_security_group.tf-jenkins-sec-gr.id]
   iam_instance_profile = aws_iam_instance_profile.ec2-profile.name
   tags = {
